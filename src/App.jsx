@@ -5,13 +5,14 @@ import OrderList from './components/orders/OrderList.jsx';
 import OrderDetails from './components/orders/OrderDetails.jsx';
 import UsersList from './components/users/UsersList.jsx';
 import UsersDetail from './components/users/UsersDetail.jsx';
-import Products from './components/Products.jsx';
-import Cart from './components/Cart.jsx';
-import Login from './components/Login.jsx';
-import Register from './components/Register.jsx';
-import Account from './components/Account.jsx';
-import SingleProduct from './components/SingleProduct.jsx';
-import './App.css';
+import Products from './components/products/Products.jsx';
+import Cart from './components/Users/Cart.jsx';
+import Login from './components/Users/Login.jsx';
+import Register from './components/Users/Register.jsx';
+import Account from './components/Users/Account.jsx';
+import SingleProduct from './components/products/SingleProduct.jsx';
+import Home from './components/Home.jsx';
+import './css/App.css';
 
 function App() {
   const [token, setToken] = useState(() => localStorage.getItem("authToken"));
@@ -29,9 +30,17 @@ function App() {
 
   return (
     <>
-      <Navbar token={token} setToken={setToken} />
+      <Navbar 
+        token={token} 
+        setToken={setToken} 
+      />
       <Routes>
-        {/* Orders */}
+        <Route 
+          path="/" 
+          element={
+            <Home />
+          }
+        />
         <Route
           path="/orders"
           element={token ? <OrderList token={token} /> : <Navigate to="/login" replace />}
@@ -40,8 +49,6 @@ function App() {
           path="/orders/:id"
           element={token ? <OrderDetails token={token} /> : <Navigate to="/login" replace />}
         />
-
-        {/* Users */}
         <Route
           path="/users"
           element={token ? <UsersList token={token} /> : <Navigate to="/login" replace />}
@@ -74,22 +81,32 @@ function App() {
             />
           }
         />
-
-        {/* Cart */}
-        <Route path="/cart" element={<Cart />} />
-        
-        {/* Auth */}
-        <Route path="/login" element={<Login setToken={setToken} />} />
-        <Route path="/register" element={<Register setToken={setToken} />} />
-
-        {/* Account*/}
+        <Route 
+          path="/cart" 
+          element={
+            <Cart />
+          } 
+        />
+        <Route 
+          path="/login" 
+          element={
+            <Login 
+              setToken={setToken} 
+            />
+          } 
+        />
+        <Route 
+          path="/register" 
+          element={
+            <Register 
+              setToken={setToken} 
+            />
+          } 
+        />
         <Route
           path="/account"
           element={token ? <Account token={token} /> : <Navigate to="/login" replace />}
         />
-
-        {/* Home or redirect */}
-        <Route path="/" element={<Navigate to={token ? "/account" : "/login"} replace />} />
       </Routes>
     </>
   );

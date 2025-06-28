@@ -1,6 +1,6 @@
 import { getUserReviews } from "../../api/index.js";
 import { useEffect, useState } from "react";
-import Cart from "../Cart.jsx";
+import Cart from "../Users/Cart.jsx";
 
 const Account = ({ token }) => {
     const [userReview, setUserReview] = useState([]);

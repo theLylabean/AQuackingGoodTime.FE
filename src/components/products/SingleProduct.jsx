@@ -50,13 +50,7 @@ const SingleProduct = ({ singleProduct, setSingleProduct }) => {
                     src={singleProduct.image_url}
                     alt={singleProduct.title}
                 />
-                <p>Quantity: {singleProduct.quantity}</p>
                 <p>Price: ${singleProduct.price}</p>
-                <p>Dose: {singleProduct.dose}</p>
-                <p>Total: {singleProduct.total}</p>
-                <p>Strain: {singleProduct.strain}</p>
-                <p>Potency: {singleProduct.potency}</p>
-                <p>Flavor: {singleProduct.flavor}</p>
                 <p className='description'>Description: {singleProduct.description}</p>
                 <button
                     className='back-button'
