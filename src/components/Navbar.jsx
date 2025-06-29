@@ -13,6 +13,7 @@ const Navbar = ({ token, setToken }) => {
     return (
         <nav className="navbar">
                 <ul>
+                    <li><Link to='/home'>Home</Link></li>
                     <li><Link to="/products">Products</Link></li>
                     <li><Link to="/account">Account</Link></li>
                     {token ? (

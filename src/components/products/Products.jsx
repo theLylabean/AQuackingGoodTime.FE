@@ -42,11 +42,8 @@ const Products = ({ products, setProducts, setSingleProduct, searchTerm, setSear
     return (
         <>
             <div className='products-header'>
-                <h1>
-                    A Snaccident Waiting to Happen!
-                </h1>
                 <p>
-                    Welcome to our products page! You'll find a wide variety of Rubber Duckies that are fun to collect or give as a gift! More Duckies will be added, so stay tuned to see new products!
+                    Welcome to our products page! You'll find a wide variety of Rubber Duckies that are fun to collect or give as a gift! More Duckies will be added soon, so stay tuned to see new products!
                 </p>
                 <br />
                 <SearchBar
@@ -65,7 +62,7 @@ const Products = ({ products, setProducts, setSingleProduct, searchTerm, setSear
                     {
                         searchResults?.length > 0 ? (
                             searchResults.map((product) => {
-                                const { id, title, image_url, flavor, price, quantity } = product;
+                                const { id, title, image_url, price } = product;
                                 if (!product || !product.id || !product.title) return null;
                                 return (
                                     <>   
@@ -86,7 +83,7 @@ const Products = ({ products, setProducts, setSingleProduct, searchTerm, setSear
                             })
                         ) : (
                             Array.isArray(products) && products.map((product) => {
-                                const { id, title, image_url, flavor, price, quantity } = product;
+                                const { id, title, image_url, price } = product;
                                 if (!product || !product.id || !product.title) return null;
                                 return (
                                     <>  

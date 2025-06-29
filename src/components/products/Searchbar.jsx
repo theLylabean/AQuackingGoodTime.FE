@@ -1,21 +1,25 @@
+
+
 const Searchbar = ({ products, setProducts, searchTerm, setSearchTerm, setSearchResults }) => {
-    
-
     const handleSearch = (e) => {
-        const searchTerm = e.target.value;
-        setSearchTerm(searchTerm);
+        const input = e.target.value;
+        setSearchTerm(input);
 
-        const lowerCase = searchTerm.toLowerCase();
+        const lowerCase = input.toLowerCase();
         const filteredProducts = products.filter((product) => 
             product.title?.toLowerCase().includes(lowerCase) ||
-            product.strain?.toLowerCase().includes(lowerCase))
+            product.price?.toString().includes(lowerCase))
             
-            if (searchTerm) {
-                setSearchResults(filteredProducts)
+            if (input) {
+                setSearchResults(filteredProducts);
             } else {
-                setProducts(products)
+                setSearchResults([]);
             }
         };
+        const handleBlur = () => {
+            setSearchTerm('');
+            setSearchResults(products);
+        }
 
     return (
         <>
@@ -25,12 +29,13 @@ const Searchbar = ({ products, setProducts, searchTerm, setSearchTerm, setSearch
                 </label>
                 <input 
                     className='search-input'
-                    placeholder='search by title or strain'
+                    placeholder='search by name or price'
                     type='text'
                     id='search'
                     name='search'
                     value={searchTerm}
                     onChange={handleSearch}
+                    onBlur={handleBlur}
                 />
             </div>
         </>
