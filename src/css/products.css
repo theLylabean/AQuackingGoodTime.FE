@@ -29,7 +29,7 @@
 }
 
 .product-divider {
-  display: none; /* optional if using border-bottom above */
+  display: none;
 }
 
 .search-input {
@@ -37,6 +37,8 @@
     border: 2px solid transparent;
     border-radius: 7px;
     background-color: black;
+    max-width: 100%;
+    width: 375px;
 }
 
 .search-input:focus {

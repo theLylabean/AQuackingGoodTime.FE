@@ -16,42 +16,42 @@ const Home = () => {
       </section>
 
 {/* Featured Ducks */}
-<section>
-  <h2 className="text-2xl font-semibold mb-4">Featured Ducks</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-    {[
-      {
-        name: "Bride Rubber Ducky",
-        image: "https://via.placeholder.com/200",
-      },
-      {
-        name: "Groom Rubber Ducky",
-        image: "https://via.placeholder.com/200",
-      },
-      {
-        name: "Minion Bob Rubber Ducky",
-        image: "https://via.placeholder.com/200"
-      },
-    ].map((duck) => (
-    <div
-        key={duck.name}
-        className="border rounded-xl p-4 w-60 shadow text-center"
-    >
-        <div className="w-40 h-40 rounded-lg overflow-hidden mx-auto mb-2 border border-gray-200">
-            <img
-                src={duck.image}
-                alt={duck.name}
-                className="w-full h-full object-cover rounded-lg"
-            />
-        </div>
+    <section className="border border-gray-300 rounded-[12xx] p-6 w-fit mx-auto">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Featured Ducks</h2>
+        <div className="flex flex-wrap justify-center gap-8">
+            {[
+            {
+                name: "Bride Rubber Ducky",
+                image: "https://i.ibb.co/hRk1tQvJ/Bride-TUBBZ-PL-with-FESticker-1-jpg-12272.jpg",
+            },
+            {
+                name: "Groom Rubber Ducky",
+                image: "https://i.ibb.co/6cQdQ4W1/Groom-TUBBZ-PL-with-FESticker-1-jpg-53858.jpg",
+            },
+            {
+                name: "Minion Bob Rubber Ducky",
+                image: "https://i.ibb.co/HTBNSyPC/Bob-Minions-TUBBZ-PL-5-89780-1669983246-1280-1280-27984.jpg",
+            },
+            ].map((duck) => (
+            <div
+                key={duck.name}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 w-[350px] text-center"
+            >
+                <div className="w-[300px] h-[300px] objext-cover mx-auto rounded-full mb-4 border-0">
+                    <img
+                        src={duck.image}
+                        alt={duck.name}
+                        className="w-[300px] h-[300px] object-cover rounded-full mx-auto mb-4 border-2 border-white dark:border-gray-900"
+                />
+                </div>
 
-        <h3 className="text-lg font-medium">{duck.name}</h3>
-        <p className="text-sm text-muted-foreground mb-2">Quack with style.</p>
-        <Button className="w-full">Add to Cart</Button>
-    </div>
-    ))}
-  </div>
-</section>
+                <h3 className="text-lg font-medium">{duck.name}</h3>
+                <p className="text-sm text-muted-foreground mb-3">Quack with style.</p>
+                <Button className="w-full">Add to Cart</Button>
+            </div>
+            ))}
+        </div>
+    </section>
 
       {/* Why Our Ducks */}
       <section className="text-center space-y-3">
@@ -70,7 +70,7 @@ const Home = () => {
         <div className="space-y-4">
           <blockquote className="border-l-4 pl-4 italic">“I bought one as a joke. Now I own twelve.” — Justin L.</blockquote>
           <blockquote className="border-l-4 pl-4 italic">“This duck flipped me off and I’ve never felt more seen.” — Lyla D.</blockquote>
-          <blockquote className="border-l-4 pl-4 italic">“My dog thinks it’s his now. I ordered a second one.” — Max M.</blockquote>
+          <blockquote className="border-l-4 pl-4 italic">“My dog thinks it’s his now. I ordered a second one.” — Tyler M.</blockquote>
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getSingleProduct } from "../../api/index.js";
 import Reviews from "../reviews/reviews.jsx";
 import ReviewForm from "../reviews/reviewForm.jsx";
+import '../../css/singleproduct.css';
 
 const SingleProduct = ({ singleProduct, setSingleProduct }) => {
     const { id } = useParams();
@@ -42,7 +43,7 @@ const SingleProduct = ({ singleProduct, setSingleProduct }) => {
     }
 
     return (
-        <div className='product-details-container'>
+        <div className='single-product-container'>
             <div key={singleProduct.id}>
                 <h2>{singleProduct.title}</h2>
                 <img
