@@ -20,6 +20,7 @@ function App() {
   const [singleProduct, setSingleProduct] = useState([]);
   const [searchTerm, setSearchTerm] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");

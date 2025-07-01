@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../../css/loginRegister.css';
 
 const Login = ({ setToken }) => {
   const [username, setUsername] = useState('');
@@ -33,15 +34,16 @@ const Login = ({ setToken }) => {
   };
 
   return (
-    <div>
+    <div className='login-register-container'>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
-        <label>Username:
+        <label className='username'>Username:&nbsp;
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
         </label><br />
-        <label>Password:
+        <label className='password'>Password:&nbsp;
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </label><br />
+        <br />
         <button type="submit">Log In</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}

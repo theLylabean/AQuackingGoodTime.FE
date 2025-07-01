@@ -30,7 +30,6 @@ const Products = ({ products, setProducts, setSingleProduct, searchTerm, setSear
     }
 };
 
-
     useEffect(() => {
         const getProductsApi = async () => {
             const response = await getProducts();

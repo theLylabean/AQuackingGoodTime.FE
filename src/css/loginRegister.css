@@ -1,0 +1,17 @@
+.login-register-container {
+  text-align: center;
+  background-color: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.login-register-container input {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #ccc;
+}

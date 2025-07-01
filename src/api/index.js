@@ -1,6 +1,25 @@
 
 const baseUrl = 'http://localhost:3000/api';
 
+const createUser = async () => {
+    try {
+        const res = await fetch(`${BASE_URL}/api/users`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ first_name, last_name, username, email, password }),
+      });
+      if (!res.ok) throw new Error('Registration failed');
+      const data = await res.json();
+
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('authToken', data.token)
+      setToken(data.token);
+      navigate('/account');
+    } catch (error) {
+        console.error({ error: 'Error creating new user'})
+    }
+}
+
 const getProducts = async () => {
     try {
         const res = await fetch(`${baseUrl}/products`);
@@ -33,4 +52,4 @@ const getUserReviews = async (token) => {
     }
 }
 
-export { getProducts, getSingleProduct, getUserReviews }
+export { getProducts, getSingleProduct, getUserReviews, createUser }
